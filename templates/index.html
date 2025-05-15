@@ -1,0 +1,10 @@
+<h1>Lista de Tareas</h1>
+<form method="POST" action="/add">
+    <input name="task" required>
+    <button type="submit">Agregar</button>
+</form>
+<ul>
+{% for task in tasks %}
+    <li>{{ task }} <a href="/delete/{{ loop.index0 }}">Eliminar</a></li>
+{% endfor %}
+</ul>
